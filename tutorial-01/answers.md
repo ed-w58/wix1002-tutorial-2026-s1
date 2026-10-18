@@ -8,9 +8,9 @@ Request two numbers from the user and print the multiplication of the numbers. T
 
 IPO model:
 
-| Input | Process | Output |
-|-------|---------|--------|
-| Two numbers a and b | product = a × b | The product |
+|Input|Process|Output|
+|-|-|-|
+|Two numbers a and b|product = a × b|The product|
 
 Pseudocode:
 
@@ -26,28 +26,25 @@ Flowchart:
 
 ```mermaid
 flowchart TD
-    A([Start]) --> B[/"Read a and b"/]
-    B --> C["product = a × b"]
-    C --> D[/"Display product"/]
-    D --> E([Stop])
+    A(\[Start]) --> B\[/"Read a and b"/]
+    B --> C\["product = a × b"]
+    C --> D\[/"Display product"/]
+    D --> E(\[Stop])
 ```
 
 Java code:
 
 ```java
 import java.util.Locale;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Exercise01 {
-    public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
-        keyboard.useLocale(Locale.US);
-        Random generator = new Random();
-        double a = keyboard.nextDouble();
-        double b = keyboard.nextDouble();
-        double product = a * b;
-        System.out.println(product);
+    public static void main(String\[] args) {
+        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+        double a = scanner.nextDouble();
+        double b = scanner.nextDouble();
+        double product = a \* b;
+        System.out.printf(Locale.US, "%.2f%n", product);
     }
 }
 ```
@@ -58,15 +55,15 @@ Determine whether a random number is greater than 50. The computer generates an 
 
 IPO model:
 
-| Input | Process | Output |
-|-------|---------|--------|
-| A generated integer n in 0–100 | Compare n > 50 | The number and the comparison result |
+|Input|Process|Output|
+|-|-|-|
+|Generate an integer between 0–100|Compare  if n > 50|Comparison result|
 
 Pseudocode:
 
 ```text
 START
-n ← RANDOM_INTEGER(0, 100)
+n ← RANDOM\_INTEGER(0, 100)
 IF n > 50 THEN
     DISPLAY n, "Greater than 50"
 ELSE
@@ -79,31 +76,29 @@ Flowchart:
 
 ```mermaid
 flowchart TD
-    A([Start]) --> B["Generate n in 0–100"]
+    A(\[Start]) --> B\["Generate n in 0–100"]
     B --> C{"n #gt; 50?"}
-    C -->|Yes| D[/"Display Greater than 50"/]
-    C -->|No| E[/"Display Not greater than 50"/]
-    D --> F([Stop])
+    C -->|Yes| D\[/"Display Greater than 50"/]
+    C -->|No| E\[/"Display Not greater than 50"/]
+    D --> F(\[Stop])
     E --> F
 ```
 
 Java code:
 
 ```java
-import java.util.Locale;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Exercise02 {
-    public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
-        keyboard.useLocale(Locale.US);
+    public static void main(String\[] args) {
         Random generator = new Random();
-        int number = generator.nextInt(0, 101);
+        int number = generator.nextInt(101);
         System.out.println("Number: " + number);
         if (number > 50) {
             System.out.println("Greater than 50");
-        } else {
+        } 
+
+&#x09;else {
             System.out.println("Not greater than 50");
         }
     }
@@ -116,9 +111,9 @@ Print the pass/fail grade based on the mark entered by the user. The passing mar
 
 IPO model:
 
-| Input | Process | Output |
-|-------|---------|--------|
-| Integer mark | Validate 0–100; compare mark ≥ 40 | Invalid mark, Pass, or Fail |
+|Input|Process|Output|
+|-|-|-|
+|Mark|Make sure mark is within 0–100; compare if mark ≥ 40|Invalid mark, Pass, or Fail|
 
 Pseudocode:
 
@@ -139,13 +134,13 @@ Flowchart:
 
 ```mermaid
 flowchart TD
-    A([Start]) --> B[/"Read mark"/]
+    A(\[Start]) --> B\[/"Read mark"/]
     B --> C{"Mark in 0–100?"}
-    C -->|No| D[/"Invalid mark"/]
+    C -->|No| D\[/"Invalid mark"/]
     C -->|Yes| E{"mark ≥ 40?"}
-    E -->|Yes| F[/"Pass"/]
-    E -->|No| G[/"Fail"/]
-    D --> H([Stop])
+    E -->|Yes| F\[/"Pass"/]
+    E -->|No| G\[/"Fail"/]
+    D --> H(\[Stop])
     F --> H
     G --> H
 ```
@@ -153,21 +148,21 @@ flowchart TD
 Java code:
 
 ```java
-import java.util.Locale;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Exercise03 {
-    public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
-        keyboard.useLocale(Locale.US);
-        Random generator = new Random();
-        int mark = keyboard.nextInt();
+    public static void main(String\[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int mark = scanner.nextInt();
         if (mark < 0 || mark > 100) {
             System.out.println("Invalid mark");
-        } else if (mark >= 40) {
+        } 
+
+&#x09;else if (mark >= 40) {
             System.out.println("Pass");
-        } else {
+        } 
+
+&#x09;else {
             System.out.println("Fail");
         }
     }
@@ -180,16 +175,16 @@ Print the results of the two players' dice game. Each player rolls one six-sided
 
 IPO model:
 
-| Input | Process | Output |
-|-------|---------|--------|
-| Two generated die values in 1–6 | Compare player 1 and player 2 | Both values; winner or draw |
+|Input|Process|Output|
+|-|-|-|
+|Generate two die values between 1–6|Compare die values from player 1 and player 2|Both values; winner or draw|
 
 Pseudocode:
 
 ```text
 START
-p1 ← RANDOM_INTEGER(1, 6)
-p2 ← RANDOM_INTEGER(1, 6)
+p1 ← RANDOM\_INTEGER(1, 6)
+p2 ← RANDOM\_INTEGER(1, 6)
 DISPLAY p1, p2
 IF p1 > p2 THEN
     DISPLAY "Player 1 wins"
@@ -205,13 +200,13 @@ Flowchart:
 
 ```mermaid
 flowchart TD
-    A([Start]) --> B[/"Generate and display both rolls"/]
+    A(\[Start]) --> B\[/"Generate and display both rolls"/]
     B --> C{"p1 #gt; p2?"}
-    C -->|Yes| D[/"Player 1 wins"/]
+    C -->|Yes| D\[/"Player 1 wins"/]
     C -->|No| E{"p2 #gt; p1?"}
-    E -->|Yes| F[/"Player 2 wins"/]
-    E -->|No| G[/"Draw"/]
-    D --> H([Stop])
+    E -->|Yes| F\[/"Player 2 wins"/]
+    E -->|No| G\[/"Draw"/]
+    D --> H(\[Stop])
     F --> H
     G --> H
 ```
@@ -219,23 +214,23 @@ flowchart TD
 Java code:
 
 ```java
-import java.util.Locale;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Exercise04 {
-    public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
-        keyboard.useLocale(Locale.US);
+    public static void main(String\[] args) {
         Random generator = new Random();
         int player1 = generator.nextInt(1, 7);
         int player2 = generator.nextInt(1, 7);
         System.out.printf("Player 1: %d, Player 2: %d%n", player1, player2);
         if (player1 > player2) {
             System.out.println("Player 1 wins");
-        } else if (player2 > player1) {
+        } 
+
+&#x09;else if (player2 > player1) {
             System.out.println("Player 2 wins");
-        } else {
+        } 
+
+&#x09;else {
             System.out.println("Draw");
         }
     }
@@ -248,9 +243,9 @@ Print the perimeter of a rectangle. The length and width are read in centimetres
 
 IPO model:
 
-| Input | Process | Output |
-|-------|---------|--------|
-| Length and width in cm | Validate; perimeter = 2 × (length + width) | Perimeter in cm or an invalid-dimensions message |
+|Input|Process|Output|
+|-|-|-|
+|Length and width in cm|is length and width > 0; perimeter = 2 × (length + width)|Perimeter in cm or an invalid-dimensions message|
 
 Pseudocode:
 
@@ -270,12 +265,12 @@ Flowchart:
 
 ```mermaid
 flowchart TD
-    A([Start]) --> B[/"Read length and width"/]
+    A(\[Start]) --> B\[/"Read length and width"/]
     B --> C{"Valid dimensions?"}
-    C -->|Yes| D["p = 2 × (length + width)"]
-    C -->|No| E[/"Display Invalid dimensions"/]
-    D --> F[/"Display p"/]
-    E --> G([Stop])
+    C -->|Yes| D\["p = 2 × (length + width)"]
+    C -->|No| E\[/"Display Invalid dimensions"/]
+    D --> F\[/"Display p"/]
+    E --> G(\[Stop])
     F --> G
 ```
 
@@ -283,21 +278,25 @@ Java code:
 
 ```java
 import java.util.Locale;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Exercise05 {
-    public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
-        keyboard.useLocale(Locale.US);
-        Random generator = new Random();
-        double length = keyboard.nextDouble();
-        double width = keyboard.nextDouble();
+    public static void main(String\[] args) {
+        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+
+&#x09;System.out.print("Enter length in cm: ");
+
+&#x20;       double length = scanner.nextDouble();
+
+&#x09;System.out.print("Enter width in cm: ");
+        double width = scanner.nextDouble();
         if (!Double.isFinite(length) || !Double.isFinite(width)
                 || length <= 0 || width <= 0) {
             System.out.println("Invalid dimensions");
-        } else {
-            double perimeter = 2 * (length + width);
+        } 
+
+&#x09;else {
+            double perimeter = 2 \* (length + width);
             System.out.printf(Locale.US, "Perimeter: %.2f cm%n", perimeter);
         }
     }
@@ -310,19 +309,19 @@ Print the minimum number from 10 random numbers generated by computer. Exactly 1
 
 IPO model:
 
-| Input | Process | Output |
-|-------|---------|--------|
-| 10 generated integers in 0–100 | Track the smallest value while inspecting all 10 | The list and its minimum |
+|Input|Process|Output|
+|-|-|-|
+|Generate ten integers from 0–100|Track the smallest value while inspecting all 10|The list of generated integers and its minimum|
 
 Pseudocode:
 
 ```text
 START
-minimum ← RANDOM_INTEGER(0, 100)
+minimum ← RANDOM\_INTEGER(0, 100)
 DISPLAY minimum
 count ← 1
 WHILE count < 10 DO
-    n ← RANDOM_INTEGER(0, 100)
+    n ← RANDOM\_INTEGER(0, 100)
     DISPLAY n
     IF n < minimum THEN
         minimum ← n
@@ -337,36 +336,33 @@ Flowchart:
 
 ```mermaid
 flowchart TD
-    A([Start]) --> B["Generate first value; min = value"]
-    B --> C["count = 1"]
+    A(\[Start]) --> B\["Generate first value; min = value"]
+    B --> C\["count = 1"]
     C --> D{"count #lt; 10?"}
-    D -->|Yes| E["Generate next n; display n"]
+    D -->|Yes| E\["Generate next n; display n"]
     E --> F{"n #lt; min?"}
-    F -->|Yes| G["min = n"]
-    F -->|No| H["Keep min"]
-    G --> I["count = count + 1"]
+    F -->|Yes| G\["min = n"]
+    F -->|No| H\["Keep min"]
+    G --> I\["count = count + 1"]
     H --> I
     I --> D
-    D -->|No| J[/"Display min"/]
-    J --> K([Stop])
+    D -->|No| J\[/"Display min"/]
+    J --> K(\[Stop])
 ```
 
 Java code:
 
 ```java
-import java.util.Locale;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Exercise06 {
-    public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
-        keyboard.useLocale(Locale.US);
-        Random generator = new Random();
+    public static void main(String\[] args) {
+
+&#x20;       Random generator = new Random();
         int minimum = generator.nextInt(0, 101);
         System.out.print(minimum + " ");
         for (int count = 1; count < 10; count++) {
-            int number = generator.nextInt(0, 101);
+            int number = generator.nextInt(101);
             System.out.print(number + " ");
             if (number < minimum) {
                 minimum = number;
@@ -384,9 +380,9 @@ Print the number of odd and even number from 10 random numbers generated by comp
 
 IPO model:
 
-| Input | Process | Output |
-|-------|---------|--------|
-| 10 generated integers in 10–100 | Test n % 2 == 0; increment even or odd | The list, odd count, and even count |
+|Input|Process|Output|
+|-|-|-|
+|Generate 10 integers from 10–100|Use n % 2 == 0 to test even integers; increment even or odd|The list, odd count, and even count|
 
 Pseudocode:
 
@@ -396,7 +392,7 @@ even ← 0
 odd ← 0
 count ← 0
 WHILE count < 10 DO
-    n ← RANDOM_INTEGER(10, 100)
+    n ← RANDOM\_INTEGER(10, 100)
     DISPLAY n
     IF n MOD 2 = 0 THEN
         even ← even + 1
@@ -413,40 +409,42 @@ Flowchart:
 
 ```mermaid
 flowchart TD
-    A([Start]) --> B["even = 0; odd = 0; count = 0"]
+    A(\[Start]) --> B\["even = 0; odd = 0; count = 0"]
     B --> C{"count #lt; 10?"}
-    C -->|Yes| D["Generate n in 10–100"]
+    C -->|Yes| D\["Generate n in 10–100"]
     D --> E{"n % 2 == 0?"}
-    E -->|Yes| F["even = even + 1"]
-    E -->|No| G["odd = odd + 1"]
-    F --> H["count = count + 1"]
+    E -->|Yes| F\["even = even + 1"]
+    E -->|No| G\["odd = odd + 1"]
+    F --> H\["count = count + 1"]
     G --> H
     H --> C
-    C -->|No| I[/"Display even and odd"/]
-    I --> J([Stop])
+    C -->|No| I\[/"Display even and odd"/]
+    I --> J(\[Stop])
 ```
 
 Java code:
 
 ```java
-import java.util.Locale;
 import java.util.Random;
-import java.util.Scanner;
+
 
 public class Exercise07 {
-    public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
-        keyboard.useLocale(Locale.US);
+    public static void main(String\[] args) {
         Random generator = new Random();
-        int even = 0, odd = 0;
+        int even = 0;
+
+&#x09;int odd = 0;
         for (int count = 0; count < 10; count++) {
             int number = generator.nextInt(10, 101);
             System.out.print(number + " ");
             if (number % 2 == 0) {
                 even++;
-            } else {
+            } 
+
+&#x09;    else {
                 odd++;
-            }
+
+&#x09;    }
         }
         System.out.println();
         System.out.printf("Even: %d, Odd: %d%n", even, odd);
@@ -462,9 +460,9 @@ Count the number of alphabet U and M from a sentence entered by user. The whole 
 
 IPO model:
 
-| Input | Process | Output |
-|-------|---------|--------|
-| One complete sentence | Inspect each character; count 'U' and 'M' | Separate U count and M count |
+|Input|Process|Output|
+|-|-|-|
+|One complete sentence|Inspect each character; count 'U' and 'M'|U count and M count|
 
 Pseudocode:
 
@@ -475,7 +473,7 @@ uCount ← 0
 mCount ← 0
 index ← 0
 WHILE index < LENGTH(sentence) DO
-    ch ← CHARACTER_AT(sentence, index)
+    ch ← CHARACTER\_AT(sentence, index)
     IF ch = 'U' THEN
         uCount ← uCount + 1
     ELSE IF ch = 'M' THEN
@@ -491,39 +489,42 @@ Flowchart:
 
 ```mermaid
 flowchart TD
-    A([Start]) --> B[/"Read sentence"/]
-    B --> C["U = 0; M = 0; i = 0"]
+    A(\[Start]) --> B\[/"Read sentence"/]
+    B --> C\["U = 0; M = 0; i = 0"]
     C --> D{"i #lt; sentence length?"}
-    D -->|Yes| E["Read character at i"]
+    D -->|Yes| E\["Read character at i"]
     E --> F{"ch is U or M?"}
-    F -->|Yes| G["Increment matching counter"]
-    F -->|No| H["Keep both counters"]
-    G --> I["i = i + 1"]
+    F -->|Yes| G\["Increment matching counter"]
+    F -->|No| H\["Keep both counters"]
+    G --> I\["i = i + 1"]
     H --> I
     I --> D
-    D -->|No| J[/"Display U and M counts"/]
-    J --> K([Stop])
+    D -->|No| J\[/"Display U and M counts"/]
+    J --> K(\[Stop])
 ```
 
 Java code:
 
 ```java
-import java.util.Locale;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Exercise08 {
-    public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
-        keyboard.useLocale(Locale.US);
-        Random generator = new Random();
-        String sentence = keyboard.nextLine();
-        int uCount = 0, mCount = 0;
+    public static void main(String\[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+&#x20;       Random generator = new Random();
+        String sentence = scanner.nextLine();
+        int uCount = 0;
+
+&#x09;int mCount = 0;
         for (int index = 0; index < sentence.length(); index++) {
-            char ch = sentence.charAt(index);
-            if (ch == 'U') {
+            char letter = sentence.charAt(index);
+            if (letter == 'U') {
                 uCount++;
-            } else if (ch == 'M') {
+            } 
+
+&#x09;    else if (letter == 'M') {
                 mCount++;
             }
         }
@@ -538,9 +539,9 @@ Display the frequency of a keyword from a web page. The text of the web page is 
 
 IPO model:
 
-| Input | Process | Output |
-|-------|---------|--------|
-| Extracted page text and one keyword | Normalize case; split into words; count exact matches | Keyword and frequency |
+|Input|Process|Output|
+|-|-|-|
+|Page text and one keyword by user|Ignore case; split into words; count exact matches|Keyword and frequency|
 
 Pseudocode:
 
@@ -563,46 +564,56 @@ Flowchart:
 
 ```mermaid
 flowchart TD
-    A([Start]) --> B[/"Read page text and keyword"/]
-    B --> C["Validate word; normalize; tokenize"]
-    C --> D["count = 0"]
+    A(\[Start]) --> B\[/"Read page text and keyword"/]
+    B --> C\["Validate word; normalize; tokenize"]
+    C --> D\["count = 0"]
     D --> E{"More words?"}
     E -->|Yes| F{"word equals keyword?"}
-    F -->|Yes| G["count = count + 1"]
-    F -->|No| H["Keep count"]
-    G --> I["Move to next word"]
+    F -->|Yes| G\["count = count + 1"]
+    F -->|No| H\["Keep count"]
+    G --> I\["Move to next word"]
     H --> I
     I --> E
-    E -->|No| J[/"Display frequency"/]
-    J --> K([Stop])
+    E -->|No| J\[/"Display frequency"/]
+    J --> K(\[Stop])
 ```
 
 Java code:
 
 ```java
 import java.util.Locale;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Exercise09 {
-    public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
-        keyboard.useLocale(Locale.US);
-        Random generator = new Random();
-        String pageText = keyboard.nextLine();
-        String keyword = keyboard.nextLine().trim().toLowerCase(Locale.ROOT);
-        if (!keyword.matches("[a-z0-9_]+")) {
+    public static void main(String\[] args) {
+        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+
+
+
+&#x09;System.out.print("Enter page text: ");
+        String pageText = scanner.nextLine();
+
+
+
+&#x09;System.out.print("Enter a keyword: ");
+        String keyword = scanner.nextLine().trim().toLowerCase(Locale.ROOT);
+
+
+        if (!keyword.matches("\[a-z0-9\_]+")) {
             System.out.println("Enter one English keyword");
-        } else {
-            String[] words = pageText.toLowerCase(Locale.ROOT)
-                    .split("[^a-z0-9_]+");
+        } 
+
+&#x09;else {
+            String\[] words = pageText.toLowerCase(Locale.ROOT).split("\[^a-z0-9\_]+");
             int frequency = 0;
             for (String word : words) {
                 if (word.equals(keyword)) {
                     frequency++;
                 }
             }
-            System.out.println("Frequency: " + frequency);
+
+&#x09;System.out.println("Keyword: " + keyword);
+        System.out.println("Frequency: " + frequency);
         }
     }
 }
@@ -614,9 +625,9 @@ Display the number of female student from a random list of 100 students. The lis
 
 IPO model:
 
-| Input | Process | Output |
-|-------|---------|--------|
-| 100 randomly generated synthetic records | Inspect each label; count F records | The records and the F count |
+|Input|Process|Output|
+|-|-|-|
+|100 randomly generated synthetic records|Inspect each label; count F records|F count|
 
 Pseudocode:
 
@@ -624,7 +635,7 @@ Pseudocode:
 START
 femaleCount ← 0
 FOR index FROM 1 TO 100 DO
-    label ← RANDOM_CHOICE('F', 'M', 'X')
+    label ← RANDOM\_CHOICE('F', 'M', 'X')
     DISPLAY index, label
     IF label = 'F' THEN
         femaleCount ← femaleCount + 1
@@ -638,35 +649,31 @@ Flowchart:
 
 ```mermaid
 flowchart TD
-    A([Start]) --> B["female = 0; index = 1"]
+    A(\[Start]) --> B\["female = 0; index = 1"]
     B --> C{"index ≤ 100?"}
-    C -->|Yes| D["Generate F, M, or X; display record"]
+    C -->|Yes| D\["Generate F, M, or X; display record"]
     D --> E{"label is F?"}
-    E -->|Yes| F["female = female + 1"]
-    E -->|No| G["Keep female"]
-    F --> H["index = index + 1"]
+    E -->|Yes| F\["female = female + 1"]
+    E -->|No| G\["Keep female"]
+    F --> H\["index = index + 1"]
     G --> H
     H --> C
-    C -->|No| I[/"Display female count"/]
-    I --> J([Stop])
+    C -->|No| I\[/"Display female count"/]
+    I --> J(\[Stop])
 ```
 
 Java code:
 
 ```java
-import java.util.Locale;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Exercise10 {
-    public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
-        keyboard.useLocale(Locale.US);
+    public static void main(String\[] args) {
         Random generator = new Random();
-        String[] labels = {"F", "M", "X"};
+        String\[] labels = {"F", "M", "X"};
         int femaleCount = 0;
         for (int index = 1; index <= 100; index++) {
-            String label = labels[generator.nextInt(labels.length)];
+            String label = labels\[generator.nextInt(labels.length)];
             System.out.printf("%03d: %s%n", index, label);
             if (label.equals("F")) {
                 femaleCount++;
@@ -683,9 +690,9 @@ Display a list of 5 random numbers in descending order. (Sort) Five integers fro
 
 IPO model:
 
-| Input | Process | Output |
-|-------|---------|--------|
-| 5 generated integers | Sort the array ascending; traverse it backwards | A descending list |
+|Input|Process|Output|
+|-|-|-|
+|Generate 5 integers|Sort the array ascending; traverse it backwards|A descending list|
 
 Pseudocode:
 
@@ -695,7 +702,7 @@ GENERATE five random integers into numbers
 SORT numbers in ascending order
 index ← LENGTH(numbers) - 1
 WHILE index >= 0 DO
-    DISPLAY numbers[index]
+    DISPLAY numbers\[index]
     index ← index - 1
 END WHILE
 STOP
@@ -705,36 +712,32 @@ Flowchart:
 
 ```mermaid
 flowchart TD
-    A([Start]) --> B["Generate five values"]
-    B --> C["Sort ascending; i = length − 1"]
+    A(\[Start]) --> B\["Generate five values"]
+    B --> C\["Sort ascending; i = length − 1"]
     C --> D{"i ≥ 0?"}
-    D -->|Yes| E[/"Display numbers[i]"/]
-    E --> F["i = i − 1"]
+    D -->|Yes| E\[/"Display numbers\[i]"/]
+    E --> F\["i = i − 1"]
     F --> D
-    D -->|No| G([Stop])
+    D -->|No| G(\[Stop])
 ```
 
 Java code:
 
 ```java
 import java.util.Arrays;
-import java.util.Locale;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Exercise11 {
-    public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
-        keyboard.useLocale(Locale.US);
+    public static void main(String\[] args) {
         Random generator = new Random();
-        int[] numbers = new int[5];
+        int\[] numbers = new int\[5];
         for (int index = 0; index < numbers.length; index++) {
-            numbers[index] = generator.nextInt(0, 101);
+            numbers\[index] = generator.nextInt(0, 101);
         }
         System.out.println("Original: " + Arrays.toString(numbers));
         Arrays.sort(numbers);
         for (int index = numbers.length - 1; index >= 0; index--) {
-            System.out.print(numbers[index] + " ");
+            System.out.print(numbers\[index] + " ");
         }
         System.out.println();
     }
@@ -747,15 +750,15 @@ Guess a random number generated by computer. The computer chooses the target onc
 
 IPO model:
 
-| Input | Process | Output |
-|-------|---------|--------|
-| A fixed random target and repeated guesses | Compare guess with target; repeat while unequal | Higher, Lower, or Correct; attempt count |
+|Input|Process|Output|
+|-|-|-|
+|A fixed random target and repeated guesses|Compare guess with target; repeat while unequal|Higher, Lower, or Correct; attempt count|
 
 Pseudocode:
 
 ```text
 START
-target ← RANDOM_INTEGER(1, 100)
+target ← RANDOM\_INTEGER(1, 100)
 attempts ← 0
 REPEAT
     READ guess
@@ -779,36 +782,37 @@ Flowchart:
 
 ```mermaid
 flowchart TD
-    A([Start]) --> B["Generate target once; attempts = 0"]
-    B --> C[/"Read guess"/]
+    A(\[Start]) --> B\["Generate target once; attempts = 0"]
+    B --> C\[/"Read guess"/]
     C --> D{"Integer in 1–100?"}
-    D -->|No| E[/"Show Enter 1–100"/]
+    D -->|No| E\[/"Show Enter 1–100"/]
     E --> C
-    D -->|Yes| F["attempts = attempts + 1"]
+    D -->|Yes| F\["attempts = attempts + 1"]
     F --> G{"guess == target?"}
-    G -->|Yes| H[/"Show Correct"/]
-    H --> I([Stop])
-    G -->|No| J[/"Compare; show Higher or Lower"/]
+    G -->|Yes| H\[/"Show Correct"/]
+    H --> I(\[Stop])
+    G -->|No| J\[/"Compare; show Higher or Lower"/]
     J --> C
 ```
 
 Java code:
 
 ```java
-import java.util.Locale;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Exercise12 {
-    public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
-        keyboard.useLocale(Locale.US);
-        Random generator = new Random();
+    public static void main(String\[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+&#x20;       Random generator = new Random();
         int target = generator.nextInt(1, 101);
         int attempts = 0;
         int guess;
         do {
-            guess = keyboard.nextInt();
+
+&#x09;    System.out.print("Enter your guess (1-100): ");
+            guess = scanner.nextInt();
             if (guess < 1 || guess > 100) {
                 System.out.println("Enter 1-100");
                 continue;
@@ -825,3 +829,4 @@ public class Exercise12 {
     }
 }
 ```
+
