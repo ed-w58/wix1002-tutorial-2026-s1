@@ -128,8 +128,8 @@ Flowchart:
 flowchart TD
     A([Start]) --> B["Inspect the statement"]
     B --> C{"Error or output mismatch found?"}
-    C --Yes--> D["Correct the statement"]
-    C --No--> E["Compile and run"]
+    C -- Yes --> D["Correct the statement"]
+    C -- No --> E["Compile and run"]
     D --> E
     E --> F[/"Display the message"/]
     F --> G([Stop])
@@ -235,12 +235,12 @@ Flowchart:
 flowchart TD
     A([Start]) --> B["Check types, initialisation and API usage"]
     B --> C{"Error found?"}
-    C --Yes--> D["Repair the smallest error"]
-    C --No--> E["Compile and run with a known input"]
+    C -- Yes --> D["Repair the smallest error"]
+    C -- No --> E["Compile and run with a known input"]
     D --> E
     E --> F{"Output matches the intended result?"}
-    F --No--> B
-    F --Yes--> G([Stop])
+    F -- No --> B
+    F -- Yes --> G([Stop])
 ```
 
 Java code:
