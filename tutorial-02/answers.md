@@ -11,6 +11,7 @@ IPO model:
 | None | Arrange the words and the line breaks | One line for part (a), three lines for part (b) |
 
 **Part (a)**
+
 Pseudocode:
 
 ```text
@@ -33,6 +34,7 @@ flowchart TD
     E --> F([Stop])
 ```
 **Part (b)**
+
 Pseudocode:
 
 ```text
