@@ -1,165 +1,118 @@
-# Tutorial 04 — Answers
+# Tutorial 05 — Answers
 
 ### Question 1
-
 1a
 ```java
-public class Q1a {
-    public static void main(String[] args) {
-        int cube = 2000;
-        int n = 0;
-        
-        while ( (n * n * n) < cube && ( (n + 1) * (n + 1) * (n + 1) < cube) ) {
-            n++;
-        }
-        System.out.println("n is " + n);
-    }
-}
+double[] numbers = new double[12];
 ```
-
 1b
 ```java
-public class Q1b {
-    public static void main(String[] args) {
-        int n = 1;
-        while (n < 13) {
-            int sq = n * n;
-            System.out.println("square of " + n + " is " + sq);
-            n++;
-        }
-    }
-}
+char[] letter = {'A', 'B', 'C', 'D', 'E'};
 ```
-
 1c
 ```java
-import java.util.Random;
-
-public class Q1c {
-    public static void main(String[] args) {
-        Random rand = new Random();
-        for (int i = 0; i < 4; i++){
-            for (int j = 0; j < 5; j++) {
-                int column = rand.nextInt(101);
-                System.out.printf("%4d ", column);
-            }
-        System.out.println("");
-        }
-    }
-}
+String[] names = new String[100];
 ```
-
 1d
 ```java
-import java.util.Scanner;
-
-public class Q1d {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter a number: ");
-        int n = sc.nextInt();
-        sc.nextLine();
-        int total = 0;
-        
-        for (int i = 0; i <= n; i++) {
-            total += i;
-        }
-        System.out.println("The sum is " + total);
-    }
-}
+int[][] values = new int[6][2];
 ```
-
 1e
 ```java
-public class Q1e {
-    public static void main(String[] args) {
-        double sum = 0;
-        int n = 26;
-        for (int i = 1; i < n; i++) {
-            sum += (double) i / (n - i);
-        }
-        System.out.printf("Sum: %.2f%n", sum);
-        
-    }
+int[][] values = {{6, 9}, {2, 5}, {4, 6}};
+```
+1f
+```java
+values[1][1] = 4;
+values[2][0] = 3;
+values[2][1] = 7;
+```
+1g
+```java
+for (int i = 0; i < contact.length; i++) {
+    System.out.println(contact[i]); 
 }
 ```
-
+       
 ### Question 2
-
 2a
-
 ```java
-int sum = 0;
-for (int x = 10; x > 0; x--)
-    sum += x;
+String[] code = {"AAA", "AAB", "AAC", "AAD"};
 ```
-
 2b
-
 ```java
-int x = 0;
-int y = 0;
-do {
-    x += 2;
-    y += x;
-    System.out.println(x + " and " + y);
-} while (x < 100);
+int[] num = new num[10];
+int sum = 0;
+for(int k=0; k<num.length(); k++)
+    sum += num[k];
 ```
-
 2c
-
 ```java
-int x;
-int y;
-for (x = 1, y = 20; x < y; x++, y-=2) {
-    System.out.println(x + " " + y);
-}
+int [][]t = new int[3][3];
+t[1][2] = 5;
 ```
-
 2d
-
 ```java
-int i = 1;
-while (i <= 10) {
-    if (i == 10)
-        System.out.println("Program End");
-    i++;
-}
+int i=4;
+int []score = new int[5];
+score [1] = 78;
+score[i] = 100;
 ```
 
 ### Question 3
-
 ```java
-public class Q3 {
-    public static void main(String[] args) {
-        int previous = 0;
-        int current = 1;
-        int sum = 1;
-        for (int i = 1; i <= 10; i++) {
-            System.out.println(sum + " ");
-            sum = previous + current;
-            previous = sum - previous;
-            current = sum;
-        }
-    }    
-}
+int[] marks = {961, 31, 1, 31, 31};
 ```
 
 ### Question 4
-
 ```java
-import java.util.Scanner;
+String[] sentence = {"the", "cat", "and", "The", "dog", "saw", "the", "bird"};
+int count = 0;
+for (int i = 0; i < sentence.length; i++) {
+    if (sentence[i].equals("the")) {
+        count++;
+    }
+}
+System.out.println("\"the\" occurs " + count + " time(s)");
+```
 
-public class Q4 {
+
+### Question 5
+```java
+for (int i = sentence.length - 1; i >= 0; i--) {
+    for (int j = sentence[i].length - 1; j >= 0; j--) {
+        System.out.print(sentence[i].charAt(j));
+    }
+    if (i != 0) {
+        System.out.print(" "); 
+    }
+}
+System.out.println(""); 
+```
+
+
+### Question 6
+```java
+import java.util.Random;
+
+public class Q6 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter a sentence to reverse: ");
-        String reverse = sc.nextLine();
-        for (int i = reverse.length() - 1; i >= 0; i--) {
-            char letter = reverse.charAt(i);
-            System.out.print(letter);
+        Random rand = new Random();
+        int number = random.nextInt(256);   
+
+        int[] bits = new int[8];            
+        int value = number;
+        for (int i = 7; i >= 0; i--) {
+            bits[i] = value % 2;            
+            value = value / 2;
         }
-        System.out.println("");
-    }    
+
+        System.out.println("Random number: " + number);
+        System.out.print("Binary: ");
+        for (int i = 0; i < bits.length; i++) {
+            System.out.print(bits[i]);
+        }
+        System.out.println();
+    }
 }
 ```
